@@ -55,7 +55,7 @@ A desktop application for real-time monitoring of air quality parameters across 
 
 4. **Run the Application**:
    ```bash
-   python main.py
+   python air_cleaning.py
    ```
 
 ## Usage
