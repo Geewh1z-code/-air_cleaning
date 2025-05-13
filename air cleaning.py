@@ -13,12 +13,12 @@ import openpyxl
 # Параметры подключения к базе данных
 db_config = {
     'host': '127.0.0.1',
-    'user': 'root',  # Замени на своего пользователя
-    'password': 'LOLkek1488',  # Замени на свой пароль
+    'user': 'your_username',
+    'password': 'your_password',
     'database': 'air_quality_monitoring'
 }
 
-# Твой исходный код (диапазоны, устройства, инициализация)
+# диапазоны, устройства, инициализация
 ranges = {
     'Temperature': (20, 60),
     'Humidity': (0, 100),
@@ -161,7 +161,7 @@ def calculate_aqi(data):
 def calculate_aqi_percentage(aqi):
     return max(0, 100 - (aqi / 500) * 100)
 
-# Функция для получения последних 20 записей из базы данных (модифицированная)
+# Функция для получения последних 20 записей из базы данных
 def get_last_20_records(location_id):
     conn = mysql.connector.connect(**db_config)
     cursor = conn.cursor(dictionary=True)
@@ -291,7 +291,7 @@ class SensorApp:
     def __init__(self, root, username="admin", user_id=None):
         self.root = root
         self.username = username
-        self.user_id = user_id  # Сохраняем user_id для логирования
+        self.user_id = user_id
         self.root.title("Мониторинг параметров завода")
         self.root.geometry("1400x800")
 
@@ -383,11 +383,10 @@ class SensorApp:
         if self.user_id:
             log_action(self.user_id, 'report_generated')
 
-            # Добавляем запись в таблицу reports (без device_id)
+            # Добавляем запись в таблицу reports
             try:
                 conn = mysql.connector.connect(**db_config)
                 cursor = conn.cursor()
-                # Поскольку отчет создается для всех цехов, добавляем одну запись с user_id
                 if self.user_id:
                     cursor.execute("""
                             INSERT INTO reports (report_date, user_id)
@@ -542,7 +541,7 @@ class SensorApp:
 
         # Проверка на превышение пороговых значений (для alert_triggered)
         thresholds = {
-            'NO2': 100,  # Пример порогового значения
+            'NO2': 100,
             'SO2': 50,
             'CO': 10,
             'AQI': 150,
