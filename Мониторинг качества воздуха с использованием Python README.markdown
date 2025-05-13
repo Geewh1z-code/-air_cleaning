@@ -22,8 +22,7 @@ A desktop application for real-time monitoring of air quality parameters across 
 ## Installation
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/air-quality-monitoring.git
-   cd air-quality-monitoring
+    https://github.com/Geewh1z-code/-air_cleaning.git cd -air_cleaning
    ```
 
 2. **Install Dependencies**:
@@ -78,12 +77,3 @@ The MySQL database includes:
 - `logs`: Tracks user actions.
 
 See `database.sql` for the full schema and initial data.
-
-## Contributing
-Contributions are welcome! Please fork the repository, create a feature branch, and submit a pull request with your changes.
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contact
-For questions or feedback, please open an issue on GitHub or contact [your.email@example.com](mailto:your.email@example.com).
