@@ -22,7 +22,7 @@ A desktop application for real-time monitoring of air quality parameters across 
 ## Installation
 1. **Clone the Repository**:
    ```bash
-    https://github.com/Geewh1z-code/-air_cleaning.git cd -air_cleaning
+   https://github.com/Geewh1z-code/-air_cleaning.git cd -air_cleaning
    ```
 
 2. **Install Dependencies**:
